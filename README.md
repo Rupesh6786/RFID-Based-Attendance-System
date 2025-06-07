@@ -88,11 +88,11 @@ function doGet(e) {
 }
 ```
 🛠️ How It Works
-1.ESP32 connects to your WiFi.
-2.When an RFID card is tapped, its UID is matched to a stored list.
-3.Student’s name and roll number are displayed on the LCD.
-4.A GET request with the student info is sent to the Google Web App.
-5.Google Apps Script logs the data into your Spreadsheet.
+  1.ESP32 connects to your WiFi.
+  2.When an RFID card is tapped, its UID is matched to a stored list.
+  3.Student’s name and roll number are displayed on the LCD.
+  4.A GET request with the student info is sent to the Google Web App.
+  5.Google Apps Script logs the data into your Spreadsheet.
 
 🤝 Contributing
 Pull requests are welcome! Feel free to improve documentation, add features, or optimize the code. Make sure to test thoroughly before submitting.
