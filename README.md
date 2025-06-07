@@ -51,11 +51,30 @@ This is an IoT-based smart **Attendance System** using an **ESP32**, **MFRC522 R
 | GND    | GND        |
 
 ---
+## ⚙️ Software & Libraries
 
+Install the following libraries in your Arduino IDE:
+
+- **MFRC522** – for RFID reading  
+- **LiquidCrystal_I2C** – for LCD display  
+- **WiFi** – for network connection  
+- **WiFiClientSecure** – for HTTPS request  
+- **HTTPClient** – for sending GET requests
+
+Install libraries via **Sketch > Include Library > Manage Libraries...**
+
+---
 ## 🌐 Google Spreadsheet Setup
 
-1. Create a new **Google Spreadsheet**.
-2. Open `Extensions > Apps Script` and paste the following:
+Follow these steps to link your ESP32 with a Google Spreadsheet:
+
+### 1. Create a Spreadsheet
+- Go to [Google Sheets](https://sheets.google.com) and create a new sheet.
+- Add these headers in row 1: Date | Time | Name | Roll No
+
+
+## 2. Add App Scipt
+- Open `Extensions > Apps Script` and paste the following:
 
 ```javascript
 function doGet(e) {
@@ -67,3 +86,19 @@ function doGet(e) {
   sheet.appendRow([date, name, rollno]);
   return ContentService.createTextOutput("Success");
 }
+```
+🛠️ How It Works
+1.ESP32 connects to your WiFi.
+2.When an RFID card is tapped, its UID is matched to a stored list.
+3.Student’s name and roll number are displayed on the LCD.
+4.A GET request with the student info is sent to the Google Web App.
+5.Google Apps Script logs the data into your Spreadsheet.
+
+🤝 Contributing
+Pull requests are welcome! Feel free to improve documentation, add features, or optimize the code. Make sure to test thoroughly before submitting.
+
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+💬 Author
+Rupesh H. Thakur – GitHub
